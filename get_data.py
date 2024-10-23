@@ -5,6 +5,7 @@ import datetime
 import os
 
 def get_aoc_input(day: int, year=None):
+    now = datetime.datetime.now()
     
     session_cookie = os.environ.get("AOC_SESSION")
     
@@ -12,8 +13,13 @@ def get_aoc_input(day: int, year=None):
         raise ValueError("Please set the AOC_SESSION environment variable!")
     
     if year is None:
-        now = datetime.datetime.now()
         year = now.year if now.month == 12 else now.year - 1
+
+    if year < 2015:
+        raise ValueError("Year must be >= 2015")
+    
+    if now.date() < datetime.date(day = day,month= 12,year= year):
+        raise ValueError("You are in the future my friend")
     
     url = f"https://adventofcode.com/{year}/day/{day}/input"
     parsed_url = urllib.parse.urlparse(url)
