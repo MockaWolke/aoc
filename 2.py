@@ -1,7 +1,7 @@
 from collections import defaultdict
 import re 
 from math import prod
-from get_data import get_aoc_input
+from aoc.get_data import get_aoc_input
 
 lines = get_aoc_input(2, 2023).splitlines()
 given = {

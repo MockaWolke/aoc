@@ -1,4 +1,4 @@
-from get_data import get_aoc_input
+from aoc.get_data import get_aoc_input
 import re
 
 data = get_aoc_input(day = 4, year= 2023).splitlines()

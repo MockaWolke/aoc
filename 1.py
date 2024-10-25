@@ -1,5 +1,5 @@
 import re
-from get_data import get_aoc_input
+from aoc.get_data import get_aoc_input
 
 
 lines = get_aoc_input(1, 2023).splitlines()

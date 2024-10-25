@@ -1,4 +1,4 @@
-from get_data import get_aoc_input
+from aoc.get_data import get_aoc_input
 data = """RL
 
 AAA = (BBB, CCC)
