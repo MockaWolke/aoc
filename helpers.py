@@ -25,6 +25,6 @@ def highlight(s, color : str):
 def extract_ints(s : str) -> list[int]:
     return list(map(int, re.findall(r"\d+", s)))
 
-def get_2dmap(data : str, filter_func : Callable = lambda x: True, transform : Callable = lambda x : x):
+def get_2dmap(data : list[str], filter_func : Callable = lambda x: True, transform : Callable = lambda x : x):
     return {(x, y): transform(c) for y, line in enumerate(data) for x, c in enumerate(line) if filter_func(transform)}
 
